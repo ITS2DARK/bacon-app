@@ -92,6 +92,10 @@ Https is nodig om de app te kunnen installeren.
 
 ## Installeren op je telefoon
 
+Open je de link in de browser, dan blijft de app staan (geen doorsturen), zodat je hem
+kunt installeren. Op Android verschijnt vaak een gele knop **Zet op beginscherm**.
+Open je de app daarna vanaf het beginscherm, dan gaat hij direct door naar Bacon.
+
 - **iPhone (Safari):** open de app-link → deelknop → *Zet op beginscherm*.
 - **Android (Chrome):** open de app-link → menu (⋮) → *App installeren* /
   *Toevoegen aan startscherm*.

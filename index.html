@@ -27,11 +27,15 @@
       <button id="cancel" class="btn btn-ghost" type="button">Menu</button>
     </section>
 
-    <!-- Startscherm (als automatisch doorsturen geannuleerd is) -->
+    <!-- Startscherm (in de browser, of via Menu) -->
     <section id="view-home" class="card" hidden>
       <img class="logo" src="icons/icon.svg" alt="">
       <h1>Bacon</h1>
-      <p>Reserveringen via SharePoint.</p>
+      <p>Reserveringen in Bacon.</p>
+      <div id="install-box" hidden>
+        <button id="install" class="btn btn-accent" type="button" hidden>📲 Zet op beginscherm</button>
+        <p id="install-help" class="install-help"></p>
+      </div>
       <a id="open-home" class="btn btn-primary" href="#">Open Bacon</a>
       <a class="btn btn-ghost" href="werkblad.html">Werkblad naar Sheets</a>
       <button id="to-setup" class="btn btn-ghost" type="button">Link wijzigen</button>
