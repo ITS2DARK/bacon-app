@@ -1,0 +1,4 @@
+# Nooit klantgegevens committen
+*.xls
+*.xlsx
+*.pdf

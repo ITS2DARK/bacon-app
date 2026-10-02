@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Werkblad naar Sheets</title>
+  <meta name="theme-color" content="#0b6a63">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <main>
+    <a class="back" href="./?menu">‹ Terug</a>
+    <section class="card">
+      <h1>Werkblad naar Sheets</h1>
+      <p>Kies de <strong>Excel-export</strong> uit Bacon (knop <em>Naar Excel exporteren</em>) en/of de
+        <strong>werkblad-PDF's</strong> (knop <em>Werkblad</em>). Je krijgt één spreadsheet met een
+        dagoverzicht en een cateringlijst, met een klikbare kolom <em>Klaar?</em>.</p>
+
+      <label class="drop" id="drop">
+        <strong>Bestanden kiezen</strong>
+        .xls / .xlsx export en .pdf werkbladen — meerdere tegelijk mag
+        <input id="files" type="file" multiple accept=".xls,.xlsx,.pdf,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+      </label>
+      <ul class="files" id="file-list"></ul>
+
+      <button id="download" class="btn btn-primary" type="button" disabled>Download spreadsheet</button>
+      <button id="reset" class="btn btn-ghost" type="button" hidden>Opnieuw beginnen</button>
+
+      <p class="note">🔒 De bestanden worden alleen op dit apparaat verwerkt. Er wordt niets geüpload.</p>
+      <p class="note"><strong>In Google Sheets:</strong> zet het gedownloade bestand in Google Drive en kies
+        <em>Openen met → Google Spreadsheets</em>. De kolom <em>Klaar?</em> blijft een klikbare keuzelijst
+        (Open / Klaargezet / Afgerond) en de regel kleurt mee.</p>
+
+      <div class="list" id="preview"></div>
+    </section>
+  </main>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="vendor/exceljs.min.js"></script>
+  <script src="werkblad-parser.js"></script>
+  <script src="werkblad-excel.js"></script>
+  <script type="module" src="werkblad.js"></script>
+</body>
+</html>

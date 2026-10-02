@@ -105,12 +105,13 @@
 
   if (normalize(config.BACON_URL)) {
     document.getElementById("to-setup").hidden = true;
-    document.getElementById("cancel").hidden = true;
   }
 
   var url = baconUrl();
   if (params.has("setup") || !url) {
     showSetup();
+  } else if (params.has("menu")) {
+    showHome(url);
   } else {
     startRedirect(url);
   }
