@@ -118,6 +118,16 @@ Open je de app daarna vanaf het beginscherm, dan gaat hij direct door naar Bacon
   *Toevoegen aan startscherm*.
 - **Windows/Mac (Edge/Chrome):** installatie-icoon rechts in de adresbalk.
 
+## Android-app (.apk)
+
+`bacon.apk` is een kleine Android-app die deze webapp opent in Chrome (Custom Tab), zodat
+inloggen, bestanden kiezen en downloaden via Chrome werken. Downloaden op de telefoon:
+**https://its2dark.github.io/bacon-app/bacon.apk** en daarna openen om te installeren
+(installeren uit onbekende bron toestaan voor Chrome). De inhoud komt altijd van de website, dus
+updates van de app komen vanzelf; de APK hoeft zelden opnieuw.
+
+Gebouwd met apktool (smali-launcher) en ondertekend met een eigen sleutel (niet in deze repo).
+
 ## Lokaal testen
 
 ```bash

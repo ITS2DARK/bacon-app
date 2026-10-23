@@ -53,6 +53,7 @@ p { color: var(--muted); margin: 0 0 20px; line-height: 1.45; }
 .btn-accent { background: var(--accent); color: #1b2624; }
 .install-help { font-size: .9rem; text-align: left; background: var(--bg); border-radius: 10px; padding: 10px 12px; margin: 10px 0 4px; }
 .install-help:empty { display: none; }
+.apk-link { display: block; font-size: .9rem; color: var(--brand); font-weight: 600; margin: 4px 0 6px; }
 .btn-ghost { background: transparent; color: var(--muted); border-color: var(--border); font-weight: 500; }
 label { display: block; text-align: left; font-weight: 600; margin: 14px 0 6px; }
 input {

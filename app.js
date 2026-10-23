@@ -109,8 +109,14 @@
 
   // Alleen automatisch doorsturen als de app vanaf het beginscherm is geopend.
   // In de gewone browser blijft de pagina staan, zodat je hem kunt installeren.
+  // ?app: geopend vanuit de Android-app (APK); geldt voor de rest van dit tabblad.
+  var appMode = params.has("app");
+  try {
+    if (appMode) sessionStorage.setItem("bacon-app", "1");
+    else appMode = sessionStorage.getItem("bacon-app") === "1";
+  } catch (e) { /* geen opslag: alleen deze pagina */ }
   var standalone = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) ||
-    navigator.standalone === true;
+    navigator.standalone === true || appMode;
 
   var url = baconUrl();
   if (params.has("setup") || !url) {
@@ -131,6 +137,7 @@
     var deferred = null;
 
     box.hidden = false;
+    if (/android/i.test(navigator.userAgent)) document.getElementById("apk").hidden = false;
     if (isIOS) {
       help.textContent = "iPhone: open deze pagina in Safari, tik op de deelknop (vierkant met pijl) " +
         "en kies \u201CZet op beginscherm\u201D.";
