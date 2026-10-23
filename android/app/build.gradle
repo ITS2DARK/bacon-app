@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'nl.bcn.bacon'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'nl.bcn.bacon'
+        minSdk 21
+        targetSdk 34
+        versionCode 3
+        versionName '1.1'
+    }
+
+    // Vaste sleutel zodat updates over de oude versie heen geïnstalleerd kunnen worden.
+    // Dit is een sleutel voor zelf installeren (geen Play Store); niet geheim.
+    signingConfigs {
+        bacon {
+            storeFile file('bacon-release.jks')
+            storePassword 'baconapp'
+            keyAlias 'bacon'
+            keyPassword 'baconapp'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.bacon
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}

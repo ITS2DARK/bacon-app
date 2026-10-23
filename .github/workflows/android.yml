@@ -1,0 +1,45 @@
+name: Android-app bouwen
+
+on:
+  push:
+    branches: [main]
+    paths: ['android/**', '.github/workflows/android.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: APK bouwen
+        run: gradle -p android assembleRelease --no-daemon
+
+      - name: APK klaarzetten
+        run: cp android/app/build/outputs/apk/release/app-release.apk bacon.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bacon-apk
+          path: bacon.apk
+
+      - name: Publiceren als download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view apk >/dev/null 2>&1 || \
+            gh release create apk --title "Bacon Android-app" \
+              --notes "Download bacon.apk en open het bestand op je telefoon om te installeren."
+          gh release upload apk bacon.apk --clobber
