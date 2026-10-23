@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zaalplanner</title>
+  <meta name="theme-color" content="#0b6a63">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <main>
+    <a class="back" href="./?menu">‹ Terug</a>
+    <section class="card">
+      <h1>Zaalplanner</h1>
+      <p>Kies de <strong>werkblad-PDF's</strong> van een paar dagen (bijv. gisteren, vandaag en de dag
+        die je klaarzet). Je ziet welke zalen al goed staan, welke je nu kunt zetten en welke
+        verplaatsingen ombouwwerk besparen.</p>
+
+      <label class="drop" id="drop">
+        <strong>Werkbladen kiezen</strong>
+        .pdf — meerdere tegelijk mag
+        <input id="files" type="file" multiple accept=".pdf,application/pdf">
+      </label>
+      <ul class="files" id="file-list"></ul>
+
+      <div id="kies" class="kies" hidden>
+        <label>Stand na
+          <select id="vandaag"></select>
+        </label>
+        <label>Klaarzetten voor
+          <select id="doeldag"></select>
+        </label>
+      </div>
+      <button id="reset" class="btn btn-ghost" type="button" hidden>Opnieuw beginnen</button>
+      <p class="note">🔒 De bestanden worden alleen op dit apparaat verwerkt. Er wordt niets geüpload.</p>
+    </section>
+
+    <div id="uitkomst"></div>
+  </main>
+  <script src="werkblad-parser.js"></script>
+  <script src="zaal-planner.js"></script>
+  <script type="module" src="zalen.js"></script>
+</body>
+</html>

@@ -16,6 +16,21 @@ De app slaat **geen wachtwoorden** op en heeft geen toegang tot je account; het
 inloggen gebeurt volledig door Microsoft. Alleen de Bacon-link wordt lokaal op
 je toestel bewaard.
 
+## Zaalplanner
+
+Via **Menu → Zaalplanner** (of `zalen.html`): kies de werkblad-PDF's van een paar dagen
+(bijv. gisteren, vandaag en de dag die je klaarzet). De app bepaalt per zaal in welke
+opstelling hij nu staat (laatste gebruik) en toont voor de gekozen dag:
+
+- **💡 Tijd besparen**: groepen verplaatsen naar een vrije zaal die al goed staat, of twee
+  zalen ruilen die precies andersom staan (liefst op dezelfde verdieping).
+- **🟢 Nu al zetten**: zalen die vandaag leeg zijn.
+- **🟠 Na vertrek ombouwen**: op volgorde van vrijkomen.
+- **✅ Staat al goed**, met waarschuwingen zoals "plekken bijzetten" of "1 persoon per tafel".
+
+Afvinken wordt alleen op het eigen toestel bewaard. Aannames: de PDF's bevatten alle
+reserveringen van die dagen, en een zaal blijft na gebruik in dezelfde opstelling staan.
+
 ## Werkblad naar Sheets
 
 Via **Menu → Werkblad naar Sheets** (of `werkblad.html`) zet je Bacon-gegevens om
@@ -47,6 +62,8 @@ nooit exports of werkbladen in deze repository: die bevatten klantgegevens.
 | `app.js` | Logica: link bewaren, doorsturen |
 | `config.js` | Hier kun je de Bacon-link vast invullen voor iedereen |
 | `werkblad.html`, `werkblad.js` | Pagina *Werkblad naar Sheets* |
+| `zalen.html`, `zalen.js`, `zaal-planner.js` | Zaalplanner |
+| `pdf-tekst.js` | Leest tekst uit PDF's (pdf.js) |
 | `werkblad-parser.js` | Leest Bacon-werkbladen (PDF) uit |
 | `werkblad-excel.js` | Combineert export + werkbladen en maakt het Excel-bestand |
 | `styles.css` | Gedeelde opmaak |

@@ -94,3 +94,22 @@ body.page { align-items: flex-start; }
 .tag { display: inline-block; font-size: .75rem; padding: 1px 8px; border-radius: 999px; background: var(--accent); color: #1b2624; margin-left: 6px; font-weight: 600; }
 .note { font-size: .85rem; color: var(--muted); margin: 14px 0 0; }
 .btn[disabled] { opacity: .45; cursor: not-allowed; }
+
+/* Zaalplanner */
+.page h2 { font-size: 1.15rem; margin: 0 0 8px; }
+.sectie, .samenvatting { margin-top: 14px; }
+.kies { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.kies label { margin: 0; font-size: .9rem; }
+.kies select { width: 100%; margin-top: 4px; padding: 10px; font: inherit; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+.zaal { padding: 12px 0; border-top: 1px solid var(--border); }
+.zaal-kop { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.zaal-titel { display: flex; align-items: center; gap: 10px; font-weight: 700; margin: 0; }
+.zaal-titel input { width: 22px; height: 22px; accent-color: var(--brand); }
+.opst { font-weight: 700; color: var(--brand); white-space: nowrap; }
+.zaal .m { color: var(--muted); font-size: .875rem; margin-top: 3px; }
+.vanaf { display: inline-block; margin-top: 6px; font-size: .8rem; font-weight: 600; background: var(--accent); color: #1b2624; border-radius: 999px; padding: 2px 10px; }
+.warn { font-size: .85rem; margin-top: 4px; }
+.tip-ref { font-size: .85rem; margin-top: 4px; color: var(--brand); font-weight: 600; }
+.zaal.gedaan { opacity: .5; }
+.zaal.gedaan .zaal-titel span { text-decoration: line-through; }
+.tip .zaal-titel { color: var(--brand); }

@@ -1,6 +1,6 @@
 // Service worker: alleen de app-schil wordt gecachet, zodat de app installeerbaar
 // is en direct opent. SharePoint/Bacon zelf wordt nooit gecachet.
-const CACHE = "bacon-app-v4";
+const CACHE = "bacon-app-v5";
 const SHELL = [
   "./",
   "index.html",
@@ -11,6 +11,10 @@ const SHELL = [
   "werkblad.js",
   "werkblad-parser.js",
   "werkblad-excel.js",
+  "pdf-tekst.js",
+  "zalen.html",
+  "zalen.js",
+  "zaal-planner.js",
   "vendor/pdf.min.mjs",
   "vendor/pdf.worker.min.mjs",
   "vendor/xlsx.full.min.js",
